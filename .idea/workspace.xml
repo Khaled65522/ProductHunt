@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5060ef22-39a7-4e4c-bbea-399ef130e270" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProductHunt/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductHunt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductHunt/settings.py" afterDir="false" />
@@ -24,30 +29,30 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Python Script" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Khaled65522"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Khaled65522&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Khaled65522/ProductHunt.git",
-    "accountId": "ab54ad33-af33-4f91-9bf8-ea5e7b05ca6e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Khaled65522/ProductHunt.git&quot;,
+    &quot;accountId&quot;: &quot;1d9b20a1-3377-44e1-a943-f26f6f634841&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2oc0cL00IbTgaC6oBbhRa9gLXg0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -61,8 +66,10 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -75,7 +82,7 @@
   <component name="RunManager">
     <configuration name="ProductHunt" type="Python.DjangoServer" factoryName="Django server">
       <module name="ProductHunt" />
-      <option name="ENV_FILES" value="" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/.venv" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -83,7 +90,7 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -115,6 +122,9 @@
       <option name="presentableId" value="Default" />
       <updated>1731153634682</updated>
       <workItem from="1731153636109" duration="3961000" />
+      <workItem from="1731518714016" duration="89000" />
+      <workItem from="1731518932729" duration="172000" />
+      <workItem from="1731519118220" duration="1148000" />
     </task>
     <servers />
   </component>
