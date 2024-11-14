@@ -26,6 +26,7 @@ urlpatterns = [
     # Apps urls
     path("", include("products.urls")),
     path("", include("sales.urls")),
+    path("", include("analytics.urls")),
 ]
 
 if settings.DEBUG:

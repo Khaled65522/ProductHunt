@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5060ef22-39a7-4e4c-bbea-399ef130e270" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sales/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analytics/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductHunt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductHunt/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductHunt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductHunt/urls.py" afterDir="false" />
@@ -39,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Khaled65522/ProductHunt.git&quot;,
-    &quot;accountId&quot;: &quot;393bff19-ed09-4dce-9c91-319c60232d38&quot;
+    &quot;accountId&quot;: &quot;20c2958b-9b23-4101-bd1f-d077b36609d6&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -62,7 +62,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/User/PycharmProjects/ProductHunt/sales",
+    "last_opened_file_path": "D:/PycharmProjectProfessional/ProductHunt/analytics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,6 +74,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PycharmProjectProfessional\ProductHunt\analytics" />
       <recent name="C:\Users\User\PycharmProjects\ProductHunt\sales" />
     </key>
   </component>
@@ -125,6 +126,8 @@
       <workItem from="1731519118220" duration="1148000" />
       <workItem from="1731522006785" duration="60000" />
       <workItem from="1731565548179" duration="448000" />
+      <workItem from="1731566538964" duration="271000" />
+      <workItem from="1731566821221" duration="360000" />
     </task>
     <servers />
   </component>
