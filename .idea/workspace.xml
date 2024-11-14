@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5060ef22-39a7-4e4c-bbea-399ef130e270" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/products/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sales/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductHunt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductHunt/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProductHunt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProductHunt/urls.py" afterDir="false" />
@@ -47,7 +39,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Khaled65522/ProductHunt.git&quot;,
-    &quot;accountId&quot;: &quot;1d9b20a1-3377-44e1-a943-f26f6f634841&quot;
+    &quot;accountId&quot;: &quot;393bff19-ed09-4dce-9c91-319c60232d38&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -70,6 +62,7 @@
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/ProductHunt/sales",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +72,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\ProductHunt\sales" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ProductHunt" type="Python.DjangoServer" factoryName="Django server">
       <module name="ProductHunt" />
@@ -125,6 +123,8 @@
       <workItem from="1731518714016" duration="89000" />
       <workItem from="1731518932729" duration="172000" />
       <workItem from="1731519118220" duration="1148000" />
+      <workItem from="1731522006785" duration="60000" />
+      <workItem from="1731565548179" duration="448000" />
     </task>
     <servers />
   </component>
