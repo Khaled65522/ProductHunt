@@ -1,0 +1,49 @@
+<header class="block w-full sticky inset-x-0 top-0 z-40 bg-white border-b">
+   <section class="px-8 py-5 mx-auto container flex items-center justify-between">
+      <div class="w-full max-w-64 flex items-center gap-x-3">
+         <a class="flex items-center gap-x-3" href="{% url 'home' %}">
+            <h1 class="text-2xl font-extrabold flex-shrink-0 text-orange-500">
+               <span>ProductHunt</span>
+            </h1>
+         </a>
+      </div>
+      <div class="flex items-center justify-center w-full">
+         <ul class="flex justify-center items-center gap-x-12 font-medium text-gray-700">
+            <a href="{% url 'home' %}" class="hover:text-orange-600">Home</a>
+            <a href="{% url 'home' %}" class="hover:text-orange-600">Products</a>
+         </ul>
+      </div>
+
+      <div class="w-full max-w-48 sm:max-w-64 flex items-center gap-x-3 justify-end">
+         {% if user.is_authenticated %}
+            <div class="relative flex-shrink-0 group">
+               <div class="avatar w-10 h-10 rounded-full font-semibold bg-primary-500 text-lg text-white flex items-center justify-center shrink-0 overflow-hidden ring-white ">
+                  <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8"
+                       alt="{{ user.first_name }}'s profile picture"
+                       width="40"
+                       height="40" />
+               </div>
+               <div class="hidden group-hover:block absolute right-0 pt-7 top-3/4 w-48">
+                  <ul class="py-2 z-50 shadow-md rounded-md bg-white border text-sm">
+                     <div class="mx-2 pb-2 mb-2 flex items-center gap-x-3 border-b">
+                        <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8"
+                             class="w-8 h-8 rounded-full border"
+                             width="32"
+                             height="32"
+                             alt="{{ user.first_name }}'s profile picture" />
+                        <h3 class="text-gray-800">{{ user.first_name }} {{ user.last_name }}</h3>
+                     </div>
+                     <a href="{% url 'logout' %}"
+                        class="w-full px-3 py-2 flex items-center gap-x-3 hover:bg-gray-100 hover:text-gray-800">
+                        Log out
+                     </a>
+                  </ul>
+               </div>
+            </div>
+         {% else %}
+            <a class="px-4 py-1.5 flex items-center gap-x-3 bg-orange-50 text-orange-600 rounded-md"
+               href="{% url 'login' %}"><span>Log in</span></a>
+         {% endif %}
+      </div>
+   </section>
+</header>

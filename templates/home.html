@@ -2,4 +2,9 @@
 
 {% block body %}
     <h1>Welcome Home</h1>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.first_name }}!</p>
+    {% else %}
+        <p>Please login to continue.</p>
+    {% endif %}
 {% endblock body %}

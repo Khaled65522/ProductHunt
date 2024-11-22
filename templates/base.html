@@ -1,18 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ProductHunt</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="text-gray-500">
-{# Header #}
-{% block body %}
-    <h1>Hello World</h1>
-{% endblock body %}
-{# Footer #}
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="keywords"
+            content="product hunt, products, discovery, tech products, startup products" />
+      <meta name="description"
+            content="ProductHunt - Discover and share amazing products" />
+      <title>ProductHunt</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap"
+            rel="stylesheet" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+   </head>
+   <body class="text-gray-500 antialiased font-medium">
+      {% include "header.html" %}
+      {% block body %}
+         <h1>Hello World</h1>
+      {% endblock body %}
+   </body>
 </html>
