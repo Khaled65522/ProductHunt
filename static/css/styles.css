@@ -8,17 +8,21 @@ body {
    font-size: 14px;
    font-weight: 600;
    color: #111827;
+   flex-shrink: 0;
 }
 
-.form-control input {
+.form-control input:not([type="file"]) {
    display: block;
    width: 100%;
    padding: 12px;
    border: 1px solid #e5e7eb;
    border-radius: 6px;
-   font-size: 14px;
-   line-height: 20px;
-   color: #111827;
+   color: black;
    outline: none;
    min-height: 40px;
+}
+
+.form-control input:not([type="file"]):focus {
+   border-color: #ea580c;
+   outline: 2px solid #fdbb74bd;
 }

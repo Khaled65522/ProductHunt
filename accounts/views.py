@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from .forms import UserRegistrationForm, UserLoginForm
+from .models import Profile
 
 
 # Create your views here.
@@ -9,6 +10,8 @@ def sign_up(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            # Create a profile for the user
+            Profile.objects.create(user=user)
             login(request, user)
             return redirect("home")
     else:
@@ -34,3 +37,21 @@ def sign_in(request):
 def sign_out(request):
     logout(request)
     return redirect("home")
+
+
+def profile(request):
+    user = request.user
+    if request.method == "POST":
+        # Update profile picture if provided
+        if request.FILES.get("avatar"):
+            user.profile.image = request.FILES["avatar"]
+            user.profile.save()
+
+        # Update user information
+        user.first_name = request.POST.get("first_name")
+        user.last_name = request.POST.get("last_name")
+        user.save()
+
+        return redirect("profile")
+    else:
+        return render(request, "accounts/profile.html", {"user": user})

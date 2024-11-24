@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block body %}
+   <h1 class="pt-8 text-3xl font-bold mb-8 text-gray-800 text-center">Profile</h1>
+
+   <div class="container mx-auto py-8 space-y-12">
+
+      <div class="bg-white rounded-lg mb-6 space-y-4">
+         <h3 class="text-xl font-semibold text-gray-800">Basic Information</h3>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+               <form method="post" enctype="multipart/form-data" class="space-y-4">
+                  {% csrf_token %}
+                  <div class="mb-4 form-control">
+                     <label class="font-semibold text-base text-gray-800 block mb-2">Profile Picture</label>
+                     <div class="flex items-center space-x-4">
+                        {% if user.profile.image %}
+                           <img src="{{ user.profile.image.url }}"
+                                alt="Profile Picture"
+                                height="96"
+                                width="96"
+                                class="w-24 h-24 rounded-full object-cover border border-gray-200" />
+                        {% else %}
+                           <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
+                              <span class="text-gray-500">No Image</span>
+                           </div>
+                        {% endif %}
+                        <input type="file"
+                               name="avatar"
+                               accept="image/*"
+                               class="text-sm text-gray-600" />
+                     </div>
+                  </div>
+                  <div class="mb-2 flex gap-x-6 items-center form-control">
+                     <label class="font-semibold text-gray-800 w-24 text-base">First Name:</label>
+                     <input type="text" name="first_name" value="{{ user.first_name }}" />
+                  </div>
+                  <div class="mb-2 flex gap-x-6 items-center form-control">
+                     <label class="font-semibold text-gray-800 w-24 text-base">Last Name:</label>
+                     <input type="text" name="last_name" value="{{ user.last_name }}" />
+                  </div>
+                  <div class="mb-2 flex gap-x-6 items-center">
+                     <p class="font-semibold text-sm text-gray-800 w-24">Email:</p>
+                     <span class="flex-1 p-1 text-gray-600">{{ user.email }}</span>
+                  </div>
+                  <button type="submit"
+                          class="px-6 py-2 bg-orange-600 text-white rounded hover:bg-orange-700">
+                     Update Profile
+                  </button>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-white rounded-lg">
+         <h3 class="text-xl font-semibold text-gray-800">Membership Status</h3>
+         <div class="py-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+               <div>
+                  <p class="mb-2">
+                     <span class="font-medium text-gray-800">Member Since:</span>
+                     <span class="ml-2 text-gray-600">{{ user.date_joined|date:"F j, Y" }}</span>
+                  </p>
+                  <p class="mb-2">
+                     <span class="font-medium text-gray-800">Account Status:</span>
+                     <span class="ml-2">
+                        {% if user.is_active %}
+                           <span class="text-green-600">Active</span>
+                        {% else %}
+                           <span class="text-red-600">Inactive</span>
+                        {% endif %}
+                     </span>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+{% endblock body %}
