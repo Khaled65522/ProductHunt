@@ -12,10 +12,16 @@
             <div class="form-control">
                <label for="{{ form.email.id_for_label }}">Email</label>
                <div class="relative w-full">{{ form.email }}</div>
+               {% if form.email.errors %}
+                  <p class="mt-1 text-sm text-red-600">{{ form.email.errors.0 }}</p>
+               {% endif %}
             </div>
             <div class="form-control">
                <label for="{{ form.password.id_for_label }}">Password</label>
                <div class="relative w-full">{{ form.password }}</div>
+               {% if form.password.errors %}
+                  <p class="mt-1 text-sm text-red-600">{{ form.password.errors.0 }}</p>
+               {% endif %}
             </div>
             <div class="flex items-center justify-center text-sm">
                <span>Don't have an account?</span>

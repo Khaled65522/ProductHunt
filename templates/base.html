@@ -12,13 +12,15 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap"
             rel="stylesheet" />
-      <script src="https://cdn.tailwindcss.com"></script>
       <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+      <script src="https://cdn.tailwindcss.com"></script>
    </head>
    <body class="text-gray-500 antialiased font-medium">
       {% include "header.html" %}
-      {% block body %}
-         <h1>Hello World</h1>
-      {% endblock body %}
+      <div class="container mx-auto px-24 border border-gray-200">
+         {% block body %}
+            <h1>Hello World</h1>
+         {% endblock body %}
+      </div>
    </body>
 </html>
