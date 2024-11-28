@@ -20,3 +20,18 @@ def create_product(request):
     else:
         form = ProductForm()
     return render(request, 'addproduct.html', {'form': form})
+
+def update_product(request, p_id):
+    p=Product.objects.get(id=p_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=p)
+        if form.is_valid():
+                form.save()
+                return redirect('/')
+
+    else:
+     form=ProductForm(instance=p)
+
+     return render(request, 'addproduct.html', {'form': form})
+
+
