@@ -21,8 +21,13 @@ def create_product(request):
         form = ProductForm()
     return render(request, 'addproduct.html', {'form': form})
 
-def update_product(request, p_id):
-    p=Product.objects.get(id=p_id)
+def detail_product(request, id):
+    products = Product.objects.filter(id=id)  # Example filter
+    return render(request, 'detail-product.html', {'products': products})
+
+
+def update_product(request, id):
+    p=Product.objects.get(id=id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=p)
         if form.is_valid():
@@ -33,5 +38,10 @@ def update_product(request, p_id):
      form=ProductForm(instance=p)
 
      return render(request, 'addproduct.html', {'form': form})
+
+def delete_product(request, id):
+    Product.objects.get(id=id).delete()
+    return redirect('/')
+
 
 
