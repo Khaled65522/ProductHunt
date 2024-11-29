@@ -28,3 +28,7 @@ class Review(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=['product'])]
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.product.name} reviewed by {self.user.first_name} {self.user.last_name}"

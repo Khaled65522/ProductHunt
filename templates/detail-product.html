@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load tailwind_filters %}
 
 {% block body %}
@@ -39,12 +40,39 @@
 
    <section class="p-8 space-y-5">
       <h2 class="text-xl font-semibold text-gray-800">Reviews</h2>
+
+      <!-- Add Review Form -->
       {% if request.user != product.owner %}
-         <form method="post">
+         <form method="post" action="{% url 'add_review' product.id %}">
             {% csrf_token %}
             {{ form|crispy }}
             <button type="submit" class="px-4 py-2 bg-sky-500 text-white rounded-md">Submit Review</button>
          </form>
       {% endif %}
+
+      <!-- Reviews -->
+      <div class="grid grid-cols-3 gap-4">
+         {% if reviews %}
+            {% for review in reviews %}
+               <div class="p-4 border rounded-md">
+                  <h3 class="text-gray-800">{{ review.user.first_name }} {{ review.user.last_name }}</h3>
+         
+                  <div class="flex items-center">
+                     {% for i in "12345" %}
+                        {% if forloop.counter <= review.rating %}
+                           <img src="{% static 'images/yellow-star.svg' %}" alt="yellow star" width="20" height="20" /> 
+                        {% else %}
+                           <img src="{% static 'images/gray-star.svg' %}" alt="gray star" width="20" height="20" />
+                        {% endif %}
+                     {% endfor %}
+                  </div>
+
+                  <p class="mt-2 text-gray-700 text-sm">{{ review.comment }}</p>
+               </div>
+            {% endfor %}
+         {% else %}
+            <p class="text-gray-500 py-4">No reviews yet</p>
+         {% endif %}
+      </div>
    </section>
 {% endblock body %}
