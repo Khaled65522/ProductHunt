@@ -5,15 +5,17 @@ from .forms import ProductForm
 
 # Create your views here.
 def create_product(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
+        print(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
-
+            product = form.save(commit=False)
+            product.owner = request.user
+            product.save()
+            return redirect("home")
     else:
         form = ProductForm()
-    return render(request, 'addproduct.html', {'form': form})
+    return render(request, "product-form.html", {"form": form})
 
 def detail_product(request, id):
     products = Product.objects.filter(id=id)  # Example filter
@@ -21,17 +23,18 @@ def detail_product(request, id):
 
 
 def update_product(request, id):
-    p=Product.objects.get(id=id)
-    if request.method == 'POST':
+    p = Product.objects.get(id=id)
+    if request.method == "POST":
         form = ProductForm(request.POST, request.FILES, instance=p)
         if form.is_valid():
-                form.save()
-                return redirect('/')
-
+            form.save()
+            return redirect("my_products")
     else:
-     form=ProductForm(instance=p)
-
-     return render(request, 'addproduct.html', {'form': form})
+        form = ProductForm(instance=p)
+        # Convert tags list to comma-separated string
+        if p.tags:
+            form.initial["tags"] = ", ".join(p.tags)
+        return render(request, "product-form.html", {"form": form})
 
 def delete_product(request, id):
     Product.objects.get(id=id).delete()
