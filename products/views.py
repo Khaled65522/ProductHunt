@@ -4,6 +4,11 @@ from .models import Product
 from .forms import ProductForm
 
 # Create your views here.
+def my_products(request):
+    products = Product.objects.filter(owner=request.user)
+    return render(request, "myproducts.html", {"products": products})
+
+
 def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
@@ -16,6 +21,7 @@ def create_product(request):
     else:
         form = ProductForm()
     return render(request, "product-form.html", {"form": form})
+
 
 def detail_product(request, id):
     products = Product.objects.filter(id=id)  # Example filter
