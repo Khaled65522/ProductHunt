@@ -18,6 +18,10 @@ def add_review(request, id):
         if product.owner == request.user:
             return redirect("detail_product", id=id)
             
+        # Check if user already reviewed this product
+        if product.reviews.filter(user=request.user).exists():
+            return redirect("detail_product", id=id)
+            
         if request.method == 'POST':
             form = ReviewForm(request.POST)
             if form.is_valid():
