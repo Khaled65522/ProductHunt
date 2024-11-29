@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from analytics.models import Review
+from analytics.forms import ReviewForm
 from .models import Product
 from .forms import ProductForm
 
@@ -24,8 +26,13 @@ def create_product(request):
 
 
 def detail_product(request, id):
-    products = Product.objects.filter(id=id)  # Example filter
-    return render(request, 'detail-product.html', {'products': products})
+    try:
+        product = Product.objects.get(id=id)
+        reviews = Review.objects.filter(product=product)
+        form = ReviewForm()
+        return render(request, 'detail-product.html', {'product': product, 'reviews': reviews, 'form': form})
+    except Product.DoesNotExist:
+        return redirect('home')
 
 
 def update_product(request, id):
