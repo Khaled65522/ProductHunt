@@ -1,15 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import  *
-from .forms import *
+from .models import Product
+from .forms import ProductForm
 
 # Create your views here.
-def all_products(request):
-    #return HttpResponse("All Products will be displayed here.")
-    #request.method = "GET"
-    products = Product.objects.all()
-    return render(request, 'product.html', {'products': products})
-
 def create_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)

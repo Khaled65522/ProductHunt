@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <h1>Welcome Home</h1>
-    {% if user.is_authenticated %}
-        <p>Welcome, {{ user.first_name }}!</p>
-    {% else %}
-        <p>Please login to continue.</p>
-    {% endif %}
-    <a href="{% url 'create_product' %}" >Add Product</a>
-    
+   <div class="grid grid-cols-3 gap-5">
+      {% for product in products %}
+         {% include "product_card.html" with product=product %}
+      {% endfor %}
+   </div>
 {% endblock body %}
