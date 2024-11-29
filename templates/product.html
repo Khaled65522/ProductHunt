@@ -3,7 +3,7 @@
 {% block body %}
     {% for i in products %}
        
-      {{ i.tagline }}
+      
       
     
     
@@ -30,7 +30,9 @@
     
   
     
-    
+    <a href="{% url 'detail_product' i.id %}" >Detail Product</a>
+    <a href="{% url 'update_product' i.id %}">Update Product</a><br>
+    <a href="{% url 'delete_product' i.id %}">Delete product</a>
     
     {% comment %} <div class="p-5 border rounded-md">
         <div class="gap-4 flex items-start">
