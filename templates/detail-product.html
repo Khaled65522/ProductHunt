@@ -1,16 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Details</title>
-</head>
-<body>
-{% for i in products %}
-<h2>Product Details</h2>
-<h1>Name: {{ i.name }}</h1>
-<h4>Tagline: {{ i.tagline }}</h4>
-<h4>Description: {{ i.description }}</h4>
-<h4>Status: {{ i.status }}</h4>
-{% endfor %}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block body %}
+   {% for product in products %}
+      <div class="p-8">
+         <div class="flex items-start gap-8">
+            <img src="{{ product.icon.url }}"
+                 alt="{{ product.name }} icon"
+                 width="128"
+                 height="128"
+                 class="w-32 h-32 rounded-lg object-cover object-center" />
+
+            <div class="flex-1">
+               <h1 class="text-3xl font-bold text-gray-900">{{ product.name }}</h1>
+               <p class="mt-2 text-xl text-gray-600">{{ product.tagline }}</p>
+
+               <div class="mt-6">
+                  <h2 class="text-xl font-semibold text-gray-800">Description</h2>
+                  <p class="mt-2 text-gray-600 leading-relaxed">{{ product.description }}</p>
+               </div>
+
+               <div class="mt-6">
+                  <h2 class="text-xl font-semibold text-gray-800">Status</h2>
+                  <p class="mt-2 text-gray-600">{{ product.status }}</p>
+               </div>
+
+               {% if request.user == product.owner %}
+                  <div class="mt-8 flex gap-4">
+                     <a href="{% url 'update_product' product.id %}"
+                        class="px-4 py-2 bg-sky-500 text-white rounded-md">Edit Product</a>
+                     <a href="{% url 'delete_product' product.id %}"
+                        class="px-4 py-2 bg-rose-500 text-white rounded-md"
+                        onclick="return confirm('Are you sure you want to delete this product?')">Delete Product</a>
+                  </div>
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   {% endfor %}
+{% endblock body %}

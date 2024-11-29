@@ -44,7 +44,7 @@ def update_product(request, id):
 
 def delete_product(request, id):
     Product.objects.get(id=id).delete()
-    return redirect('/')
+    return redirect("my_products")
 
 
 
