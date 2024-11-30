@@ -15,6 +15,7 @@
             <a href="{% url 'home' %}" class="hover:text-orange-600">Home</a>
             {% if user.is_authenticated %}
                <a href="{% url 'my_products' %}" class="hover:text-orange-600">My Products</a>
+               <a href="{% url 'my_coupons' %}" class="hover:text-orange-600">My Coupons</a>
             {% endif %}
          </ul>
       </div>
@@ -60,10 +61,6 @@
                      <a href="{% url 'profile' %}"
                         class="font-semibold w-full px-3 py-2 flex items-center gap-x-3 hover:bg-gray-100 hover:text-gray-800">
                         Profile
-                     </a>
-                     <a href="{% url 'home' %}"
-                        class="font-semibold w-full px-3 py-2 flex items-center gap-x-3 hover:bg-gray-100 hover:text-gray-800">
-                        Dashboard
                      </a>
                      <a href="{% url 'logout' %}"
                         class="font-semibold w-full px-3 py-2 flex items-center gap-x-3 hover:bg-gray-100 hover:text-gray-800">

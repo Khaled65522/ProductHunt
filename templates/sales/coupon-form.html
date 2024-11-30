@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load tailwind_filters %}
+
+{% block body %}
+   <div class="container mx-auto space-y-4">
+      <h1 class="text-2xl font-bold text-gray-800 text-center">Coupon Form</h1>
+      <form method="post"
+            enctype="multipart/form-data"
+            class="max-w-2xl mx-auto space-y-6">
+         {% csrf_token %}
+         {{ form|crispy }}
+         <button type="submit"
+                 class="w-full py-3 px-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-sm transition-colors">
+            Submit
+         </button>
+      </form>
+   </div>
+{% endblock body %}
